@@ -13,3 +13,24 @@
 #dish-form textarea{resize:vertical;min-height:86px;width:100%}
 #dish-form .field .checkbox{margin-left:9px;margin-bottom:7px}
 @media(max-width:780px){.ingredient-row{grid-template-columns:1fr 1fr}.ingredient-row>.btn{justify-self:start}.catalog-tabs{display:flex}}
+
+/* v1.2 — Ingredient Master Data, Matrix, nested add-ingredient popup */
+.ingredient-row{grid-template-columns:minmax(200px,2fr) minmax(140px,1fr) 95px 95px auto auto;gap:9px}
+.ingredient-row .ingredient-category-readonly{background:#f0f4f8;color:#607384}
+.ingredient-popup-layer{position:fixed;inset:0;z-index:80;background:rgba(9,26,44,.67);display:flex;align-items:center;justify-content:center;padding:18px}
+.ingredient-popup{width:min(1030px,98vw);max-height:94vh;overflow-y:auto;border-radius:17px;background:#fff;box-shadow:0 40px 100px rgba(4,25,42,.36)}
+.ingredient-popup .modal-body{padding:22px}
+.ingredient-popup .ingredient-subheading{margin:22px 0 10px;font-size:15px;color:#1c4966;padding:9px 12px;border-right:4px solid #19867c;background:#f2f9fa;border-radius:5px}
+.ingredient-popup .nutrient-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ingredient-popup .inline-fields{display:flex;gap:8px}
+.ingredient-popup .inline-fields input{flex:1;min-width:0}
+.ingredient-popup .inline-fields select{width:85px}
+.ingredient-popup .modal-footer{position:sticky;bottom:0;z-index:1}
+.ingredient-popup-layer .field label{display:block;margin-bottom:5px}
+@media(max-width:820px){.ingredient-row{grid-template-columns:repeat(2,minmax(0,1fr))}.ingredient-popup .nutrient-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:550px){.ingredient-popup .nutrient-grid{grid-template-columns:1fr}.ingredient-popup .form-grid.two{grid-template-columns:1fr}}
+.matrix-chip{display:inline-block;border-radius:6px;font-size:10px;font-weight:800;padding:4px 7px;white-space:nowrap}
+.matrix-green{background:#dff4e8;color:#086f3b}
+.matrix-amber{background:#fff3c4;color:#8f6000}
+.matrix-red{background:#ffe0e0;color:#a71d32}
+.matrix-neutral{background:#eef1f5;color:#667486}
